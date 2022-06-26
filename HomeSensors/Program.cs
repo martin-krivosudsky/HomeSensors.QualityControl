@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using HomeSensors.Services;
+
+string path = "log.txt";
+
+if (!File.Exists(path))
+{
+    return;
+}
+
+string log = File.ReadAllText(path);
+
+string output = SensorEvaluator.EvaluateLogFile(log);
+
+Console.WriteLine(output);

@@ -5,3 +5,9 @@
 /.vs
 /HomeSensors/.vs
 /HomeSensors/obj
+/HomeSensors.Base/obj
+/HomeSensors.DAL/obj
+/HomeSensors.Services/obj
+/HomeSensors/bin/Debug/net6.0
+/HomeSensors.Base/bin/Debug/net6.0
+/HomeSensors.Services/bin/Debug/net6.0
