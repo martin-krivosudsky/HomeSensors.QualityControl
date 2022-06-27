@@ -1,12 +1,20 @@
 ﻿using HomeSensors.Base.Interfaces;
 using HomeSensors.Base.Interfaces.Services;
 using HomeSensors.Base.Models;
+using Microsoft.Extensions.Logging;
 using System.Linq.Expressions;
 
 namespace HomeSensors.Services
 {
     internal class SensorFactory : ISensorFactory
     {
+        private readonly ILogger<SensorFactory> _logger;
+
+        public SensorFactory(ILogger<SensorFactory> logger)
+        {
+            _logger = logger;
+        }
+
         // Caching compiled expressions. Much faster than reflection and almost as fast as new()
         private readonly Dictionary<string, Func<string, SensorReference, ISensor>> _constructors = new Dictionary<string, Func<string, SensorReference, ISensor>>();
 
@@ -26,7 +34,8 @@ namespace HomeSensors.Services
 
             if (ctor == null)
             {
-                throw new InvalidDataException($"Type '{type}' is not supported.");
+                _logger.LogError($"Type '{type}' is not supported.");
+                throw new InvalidDataException($"Reflection failed. Type '{type}' not implemented.");
             }
 
             var parameter1 = Expression.Parameter(typeof(string), "name");
