@@ -39,7 +39,7 @@ public abstract class SensorBase<T> : ISensor where T : struct
 
     public override string ToString() 
     {
-        return $"\"{_name}\": \"{GetQualityRating().ToFriendlyString()}\"";
+        return _name;
     }
 
     public abstract QualityRating GetQualityRating();

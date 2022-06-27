@@ -2,7 +2,7 @@
 {
     public class SensorReference
     {
-        // This needs to be modified everytime new reference is added. Format of log file should be changed.
+        // This needs to be modified everytime new reference is added. Format of log file should be changed (JSON maybe).
         public SensorReference(string[] input)
         {
             Temperature = double.Parse(input[0]);

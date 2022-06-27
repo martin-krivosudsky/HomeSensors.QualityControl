@@ -11,3 +11,5 @@
 /HomeSensors/bin/Debug/net6.0
 /HomeSensors.Base/bin/Debug/net6.0
 /HomeSensors.Services/bin/Debug/net6.0
+/HomeSensors.Services.Tests/bin/Debug/net6.0
+/HomeSensors.Services.Tests/obj

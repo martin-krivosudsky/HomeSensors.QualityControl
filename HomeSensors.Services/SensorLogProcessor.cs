@@ -1,4 +1,5 @@
-﻿using HomeSensors.Base.Interfaces;
+﻿using HomeSensors.Base.Helpers;
+using HomeSensors.Base.Interfaces;
 using HomeSensors.Base.Interfaces.Services;
 using HomeSensors.Base.Models;
 using Microsoft.Extensions.Logging;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace HomeSensors.Services
 {
-    internal class SensorLogProcessor : ISensorLogProcessor
+    public class SensorLogProcessor : ISensorLogProcessor
     {
         private readonly ISensorFactory _sensorFactory;
         private ISensor _currentSensor;
@@ -36,7 +37,7 @@ namespace HomeSensors.Services
 
             foreach (var sensor in _sensors.Values)
             {
-                sb.AppendLine(sensor.ToString());                
+                sb.AppendLine($"\"{sensor.ToString()}\": \"{sensor.GetQualityRating().ToFriendlyString()}\"");                
             }
 
             return sb.ToString();
@@ -51,7 +52,6 @@ namespace HomeSensors.Services
             if (values.Length <= 1)
             {
                 _logger.LogWarning($"Invalid line: '{line}'. Skipping.");
-
                 return;
             }
 
@@ -71,6 +71,12 @@ namespace HomeSensors.Services
 
         private void ProcessSensor(string type, string name)
         {
+            if (_sensorReference == null)
+            {
+                _logger.LogWarning($"Log can not contain sensor definition before defining reference. Skipping: '{type} {name}'.");
+                return;
+            }
+
             if (_sensors.ContainsKey(name))
             {
                 _currentSensor = _sensors[name];
@@ -113,6 +119,7 @@ namespace HomeSensors.Services
                 return;
             }
 
+            _logger.LogDebug($"Adding reading '{timestamp} {value}' to '{_currentSensor}'.");
             _currentSensor.AddData(timestamp, value);
         }
     }

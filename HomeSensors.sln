@@ -5,14 +5,16 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSensors.Console", "HomeSensors\HomeSensors.Console.csproj", "{17B89A9A-D326-4722-8025-3C3D2AEC0DEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSensors.Base", "HomeSensors.Base\HomeSensors.Base.csproj", "{AA54910F-88B3-4BAA-BFD8-9B3A95F27455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSensors.Base", "HomeSensors.Base\HomeSensors.Base.csproj", "{AA54910F-88B3-4BAA-BFD8-9B3A95F27455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSensors.Services", "HomeSensors.Services\HomeSensors.Services.csproj", "{519C8248-8948-49D4-B48A-4E64948588D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSensors.Services", "HomeSensors.Services\HomeSensors.Services.csproj", "{519C8248-8948-49D4-B48A-4E64948588D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2F26EFA-09A9-42E4-A223-5685AA8B0D3F}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSensors.Services.Tests", "HomeSensors.Services.Tests\HomeSensors.Services.Tests.csproj", "{DB2A5356-7E14-491F-93A5-FD3583B2E2CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{519C8248-8948-49D4-B48A-4E64948588D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{519C8248-8948-49D4-B48A-4E64948588D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{519C8248-8948-49D4-B48A-4E64948588D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB2A5356-7E14-491F-93A5-FD3583B2E2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB2A5356-7E14-491F-93A5-FD3583B2E2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB2A5356-7E14-491F-93A5-FD3583B2E2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2A5356-7E14-491F-93A5-FD3583B2E2CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

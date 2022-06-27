@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace HomeSensors.Base.Helpers
 {
-    internal static class EnumToString
+    public static class EnumToString
     {
         public static string ToFriendlyString(this QualityRating qualityRating)
         {
